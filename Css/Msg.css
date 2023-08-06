@@ -1,0 +1,66 @@
+#close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+
+    display: none;
+}
+
+#close:checked ~ .msg, #close:checked + .msglabel {
+    display: none;
+}
+
+#close:checked ~ .story {
+    display: block;
+}
+
+
+.msglabel {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+
+    z-index: 3;
+
+    cursor: pointer;
+
+    padding: 1.4rem;
+    border-radius: 10rem;
+	box-shadow: .3rem .2rem 1rem rgba(0, 0, 0, 0.486);
+    background: url('../Picture/msg/close.png') no-repeat;
+    background-size: .8rem;
+    background-position: center;
+    background-color: white;
+}
+
+.msg {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    color: black;
+    background-color: white;
+    
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+}
+
+.msg img {
+    max-width: 8rem;
+}
+
+.msg span {
+    font-size: xx-large;
+}
+
+.msg p {
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    margin: 0 2rem;
+}

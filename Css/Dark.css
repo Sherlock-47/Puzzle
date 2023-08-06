@@ -1,0 +1,35 @@
+body {
+	background-color: white;
+	transition: 0.2s linear;
+}
+
+.dark {
+	background-color: #292C35;
+    color: white;
+}
+
+.theme {
+	display: none;
+}
+
+.themel {
+	background-color: rgb(0, 0, 0);
+	background: url('../Picture/Dark mode/moon.png') no-repeat center;
+	background-size: cover;
+	border-radius: 50%;
+    cursor: pointer;
+	position: absolute;
+	top: 1rem;
+	right: 1.2rem;
+    padding: 1.5rem;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+    z-index: 1;
+}
+
+.theme:checked + .themel {
+    background-color: white;
+	background: url('../Picture/Dark mode/sun.png') no-repeat center;
+	filter: invert();
+	background-size: 80%;
+}

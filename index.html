@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+    <link rel="icon" href="Picture/Favicons/pass.png">
+    
+    <link rel="stylesheet" href="Css/Msg.css">
+    <link rel="stylesheet" href="Passwords/password.css">
+    <link rel="stylesheet" href="Css/Dark.css">
+    <link rel="stylesheet" href="Css/basic.css">
+
+    <style>
+        body::after { 
+            position:absolute; 
+            width:0; 
+            height:0; 
+            overflow:hidden; 
+            z-index:-1; 
+            content:
+            url('Picture/password/view.png')
+            url('Picture/password/hide.png')
+            url('Picture/msg/close.png')
+            url('Picture/Dark mode/moon.png')
+            url('Picture/Dark mode/sun.png');
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Dark -->
+    <input type="checkbox" class="theme" id="chk" />
+    <label class="themel" for="chk"></label>
+
+    <!-- Main -->
+    <input type="checkbox" id="close" name="close">
+
+    <label for="close" class="msglabel"></label>
+
+    <div class="msg">
+        <p>
+            Mara kha 🖕
+        </p>
+    </div>
+
+
+    <form>
+        <h2>What's the Password?<br> 🧐</h2>
+        
+        <input type="checkbox" name="view" id="view">
+        <label for="view" class="viewico" onclick="toggle()"></label>
+
+        <input name="pass" type="password" placeholder="password" id="pass"/>
+        <input class="button" value="Enter" onclick="pasuser(this.form)" type="button" id="enter">
+        <br><br>
+        <label for="close" class="message">Don't know password??</label>
+
+        <input type="checkbox" id="wrong" name="wrong">
+        <label for="wrong" class="wronglabel"></label>
+        <div id="wrongmsg" class="wrong">
+            <p> <span>Wrong Password 🥱</span> <br><br><br>
+                
+                It's all about time. So watch the time!
+            </p>
+        </div>
+    </form>
+
+    <script language="javascript">
+        function pasuser(form) {
+            if (form.pass.value=="2843") {
+                location="congrats.html";
+            } else if (form.pass.value=="") { 
+                document.getElementsByName('pass')[0].placeholder='Kisu lekh shala';
+            } else  { 
+                document.getElementsByName('pass')[0].placeholder='Password';
+                document.getElementById("wrong").checked = true;
+            }
+        }
+
+        var state= false;
+        function toggle(){
+            if(state){
+	            document.getElementById("pass").setAttribute("type","password");
+	            state = false;
+            }
+            else{
+	            document.getElementById("pass").setAttribute("type","text");
+	            state = true;
+            }
+}
+    </script>
+
+    <script src="Javascript/Dark.js"></script>
+</body>
+</html>
